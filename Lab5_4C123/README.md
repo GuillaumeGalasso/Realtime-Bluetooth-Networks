@@ -9,7 +9,7 @@ The system has four layers:
 - The physical layer provides basic erase and program functions. These functions begin with Flash_ and can be found in the FlashProgram.c file. These functions are provided.
 
 - The disk layer partitions the second half of the on-board flash into a solid state disk. The sector size will be 512 bytes. This module provides sector read and write functions. These functions begin with eDisk_. You will implement these functions by filling in C code within the eDisk.c file. In particular, you will implement
-  * enum DRESULT eDisk_Init(uint32_t drive);
+  - enum DRESULT eDisk_Init(uint32_t drive);
   * enum DRESULT eDisk_ReadSector(uint8_t *buff, uint8_t sector);
   * enum DRESULT eDisk_WriteSector(const uint8_t *buff, uint8_t sector);
   * enum DRESULT eDisk_Format(void);

@@ -1,4 +1,4 @@
-# Lab 1: Thread Management
+# Lab 2: Thread Management
 
 Lab achieved with a score of 100%
 

@@ -14,6 +14,13 @@ Your assignment is to increase the rate of Task0 from 10 to 1000 Hz, while maint
 - Task3: desired time between executions is 100,000µs
 - Task4: desired time between executions is 100,000µs
 - Task5: desired time between executions is 1,000,000µs
-- You can obtain full score if your system runs within 5% of these specifications.
+
+You can obtain full score if your system runs within 5% of these specifications.
+
+![diagram](Lab_dataFlow.jpg)
+
+*Data flow graph of Lab 1*.
 
 ## Completed files
+
+'Lab.c'- main file

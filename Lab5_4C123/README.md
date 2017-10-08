@@ -15,7 +15,12 @@ The system has four layers:
   * enum DRESULT eDisk_Format(void);
 
 - The file system layer implements the write-once file system. These functions begin with eFile_. You will implement these functions by filling in C code within the eFile.c file. In particular, you will implement
- * r
+  * enum DRESULT eDisk_Init(uint32_t drive);
+  * enum DRESULT eDisk_ReadSector(uint8_t *buff, uint8_t sector);
+  * enum DRESULT eDisk_WriteSector(const uint8_t *buff, uint8_t sector);
+  * enum DRESULT eDisk_Format(void);
+
+ * uint8_t OS_File_Format(void); 
  * uint8_t OS_File_New(void); 
  * uint8_t OS_File_Append(uint8_t num, uint8_t buf[512]); 
  * uint8_t OS_File_Read(uint8_t num, uint8_t location, uint8_t buf[512]); 

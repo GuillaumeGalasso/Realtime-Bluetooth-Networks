@@ -23,4 +23,4 @@ You can obtain full score if your system runs within 5% of these specifications.
 
 ## Completed files
 
-`Lab.c`- main file
+`Lab.c` - main file

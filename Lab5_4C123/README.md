@@ -19,12 +19,11 @@ The system has four layers:
   * enum DRESULT eDisk_ReadSector(uint8_t *buff, uint8_t sector);
   * enum DRESULT eDisk_WriteSector(const uint8_t *buff, uint8_t sector);
   * enum DRESULT eDisk_Format(void);
-
- * uint8_t OS_File_Format(void); 
- * uint8_t OS_File_New(void); 
- * uint8_t OS_File_Append(uint8_t num, uint8_t buf[512]); 
- * uint8_t OS_File_Read(uint8_t num, uint8_t location, uint8_t buf[512]); 
- * uint8_t OS_File_Flush(void);
+  * uint8_t OS_File_Format(void); 
+  * uint8_t OS_File_New(void); 
+  * uint8_t OS_File_Append(uint8_t num, uint8_t buf[512]); 
+  * uint8_t OS_File_Read(uint8_t num, uint8_t location, uint8_t buf[512]); 
+  * uint8_t OS_File_Flush(void);
 
 - The highest level is the user application. In Lab 5, this layer is given. It consists of the Lab 5 grader and a simple example of how the functions could be used.
 

@@ -20,7 +20,7 @@ This simple fitness device has eight tasks: two periodic and six main threads. S
 
 Thread 7, which doesn’t do any useful task, will never sleep or block. Adding this thread will make your RTOS easier to implement because you do not need to handle the case where all main threads are sleeping or blocked.
 
-you are asked to implement the RTOS by writing code in the osasm.s and OS.c files
+You are asked to implement the RTOS by writing code in the osasm.s and OS.c files
 
 ![diagram](Lab_dataFlow.jpg)
 

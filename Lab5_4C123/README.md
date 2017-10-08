@@ -25,5 +25,6 @@ The system has four layers:
 
 ## Completed files
 
-`eDisk.c` \
+`eDisk.c`
+
 `eFile.c`

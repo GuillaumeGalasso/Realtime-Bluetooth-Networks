@@ -31,4 +31,4 @@ There are some file types which will appear in every lab assignment.
 **[Kiel uVsion 5](https://www.keil.com/demo/eval/armv4.htm)** - All the code/debug were done on this IDE. \
 **[Stellaris/Tiva LaunchPad™](http://www.ti.com/tool/ek-tm4c123gxl)** - Everything is meant to work on a EK-TM4C123G launchpad. \
 **[Educational BoosterPack MKII](http://www.ti.com/tool/BOOSTXL-EDUMKII)** - Various analog and digital inputs/outputs for the TM4C123G launchpad. \
-**[SimpleLink™ CC2650 Wireless MCU LaunchPad™ Kit](http://www.ti.com/tool/launchxl-cc2650)** - Launchpad used in BoosterPack mode to bring Bluetooth low energy connectivity to the TM4C123G launchpad.
+**[SimpleLink™ CC2650 Wireless MCU LaunchPad™ Kit](http://www.ti.com/tool/launchxl-cc2650)** - Launchpad used in BoosterPack mode to bring Bluetooth low energy connectivity to the TM4C123G launchpad (used in Lab 6.

@@ -22,5 +22,5 @@ More specifically, we are asking you to develop and debug a real-time operating 
 
 ## Completed files
 
-`OS.c`- OS functions file \
-`osasm.s`- SysTick interrupt service routine definition (ARM)
+`OS.c` - OS functions file \
+`osasm.s` - SysTick interrupt service routine definition (ARM)

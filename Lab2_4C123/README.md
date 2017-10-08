@@ -19,7 +19,7 @@ More specifically, we are asking you to develop and debug a real-time operating 
 
 ![diagram](Lab_dataFlow.jpg)
 
-*Data flow graph of Lab 1*.
+*Data flow graph of Lab 2*.
 
 ## Completed files
 

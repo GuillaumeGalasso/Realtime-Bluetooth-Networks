@@ -1,3 +1,5 @@
+# Syllabus
+
 #### Module 1: Introduction to RTOS
 1.1. Real-Time Operating Systems \
 1.2. Computer Architecture \
@@ -60,4 +62,4 @@ Lab 5: File System using a Solid-State Disk
 6.5. Application Layer Protocols for Embedded Systems
 
 Quiz 6 \
-Lab 6. Bluetooth BLE
+Lab 6: Bluetooth BLE

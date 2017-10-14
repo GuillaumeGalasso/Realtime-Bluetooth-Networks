@@ -151,14 +151,6 @@ void BuildAddServiceMsg(uint16_t uuid, uint8_t *msg){
   msg[6] = uuid&0xFF;
   msg[7] = uuid>>8;
   SetFCS(msg);
-	/*
-	uint8_t NPI_AddService[] = {
-  SOF,3,0x00,     // length = 3
-  0x35,0x81,      // SNP Add Service
-  0x01,           // Primary Service
-  0xF0,0xFF,
-  0xB9};          // FCS (calculated by AP_SendMessageResponse)
-	*/
 }
 //*************Lab6_AddService**************
 // Add a service, used in Lab 6
@@ -183,13 +175,7 @@ void BuildRegisterServiceMsg(uint8_t *msg){
   msg[0] = SOF;
 	msg[1] = 0x00; msg[2] = 0x00; //Length
 	msg[3] = 0x35; msg[4] = 0x84;  //SNP Register Service
-	SetFCS(msg); //See if function has to be modified to be 0 if size is 0 ???
-  /*
-	const uint8_t NPI_Register[] = {   
-  SOF,0x00,0x00,  // length = 0
-  0x35,0x84,      // SNP Register Service
-  0x00};          // FCS (calculated by AP_SendMessageResponse)
-	*/
+	SetFCS(msg); 
 }
 //*************Lab6_RegisterService**************
 // Register a service, used in Lab 6
@@ -229,18 +215,7 @@ void BuildAddCharValueMsg(uint16_t uuid,
 	msg[9] = 0x00; msg[10] = 0x02;  //Maximum length of the attribute value=512
 	msg[11] = uuid&0xFF;  //UUID
 	msg[12] = uuid>>8;  //UUID
-	SetFCS(msg); //See if function has to be modified to be 0 if size is 0 ???
-/*
-	uint8_t NPI_AddCharValue[] = {   
-  SOF,0x08,0x00,  // length = 8
-  0x35,0x82,      // SNP Add Characteristic Value Declaration
-  0x03,           // 0=none,1=read,2=write, 3=Read+write, GATT Permission
-  0x0A,0x00,      // 2=read,8=write,0x0A=read+write,0x10=notify, GATT Properties
-  0x00,           // RFU
-  0x00,0x02,      // Maximum length of the attribute value=512
-  0xF1,0xFF,      // UUID
-  0xBA};          // FCS (calculated by AP_SendMessageResponse)
-*/	
+	SetFCS(msg); 	
 }
 
 //*************BuildAddCharDescriptorMsg**************
@@ -269,18 +244,7 @@ void BuildAddCharDescriptorMsg(char name[], uint8_t *msg){
 		i++;
 	} 
 	msg[11+i] = 0; //End of string
-	SetFCS(msg); //See if function has to be modified to be 0 if size is 0 ???
-/*
-	uint8_t NPI_AddCharDescriptor[] = {   
-  SOF,0x17,0x00,  // length determined at run time 6+string length
-  0x35,0x83,      // SNP Add Characteristic Descriptor Declaration
-  0x80,           // User Description String
-  0x01,           // GATT Read Permissions
-  0x11,0x00,      // Maximum Possible length of the user description string
-  0x11,0x00,      // Initial length of the user description string
-  'C','h','a','r','a','c','t','e','r','i','s','t','i','c',' ','0',0, // Initial user description string
-  0x0C,0,0,0};    // FCS (calculated by AP_SendMessageResponse)
-*/	
+	SetFCS(msg); 
 }
 
 //*************Lab6_AddCharacteristic**************
@@ -351,19 +315,7 @@ void BuildAddNotifyCharDescriptorMsg(char name[], uint8_t *msg){
 		i++;
 	} 
 	msg[12+i] = 0;  //End of string
-	SetFCS(msg);  //See if function has to be modified to be 0 if size is 0 ???
-/*
-const uint8_t NPI_AddCharDescriptor4[] = {   
-  SOF,12,0x00,    // length = 12
-  0x35,0x83,      // SNP Add Characteristic Descriptor Declaration
-  0x84,           // User Description String+CCCD
-  0x03,           // CCCD parameters read+write
-  0x01,           // GATT Read Permissions
-  0x06,0x00,      // Maximum Possible length of the user description string
-  0x06,0x00,      // Initial length of the user description string
-  'C','o','u','n','t',0, // Initial user description string
-  0x0E};          // FCS (calculated by AP_SendMessageResponse)	
-*/
+	SetFCS(msg);  
 }
   
 //*************Lab6_AddNotifyCharacteristic**************
@@ -424,15 +376,6 @@ void BuildSetDeviceNameMsg(char name[], uint8_t *msg){
 		i++;
 	}
   SetFCS(msg);
-/*
-	uint8_t NPI_GATTSetDeviceName[] = {   
-  SOF,22,0x00,    // length = 22
-  0x35,0x8C,      // SNP Set GATT Parameter (0x8C)
-  0x01,           // Generic Access Service
-	6,7:  0x00,0x00,      // Device Name
-  'S','h','a','p','e',' ','t','h','e',' ','W','o','r','l','d',' ','0','0','1',
-  0x77};          // FCS (calculated by AP_SendMessageResponse)
-*/  
 }
 //*************BuildSetAdvertisementData1Msg**************
 // Create a Set Advertisement Data message, used in Lab 6
@@ -460,19 +403,6 @@ void BuildSetAdvertisementData1Msg(uint8_t *msg){
 	msg[14] = 0x00;  //TI_ST_KEY_DATA_ID
 	msg[15] = 0x00;  //Key state
 	SetFCS(msg);
-/*
-	const uint8_t NPI_SetAdvertisement1[] = {   
-0,1,2:  SOF,11,0x00,    // length = 11
-3,4:  0x55,0x43,      // SNP Set Advertisement Data
-5:  0x01,           // Not connected Advertisement Data
-6,7,8:  0x02,0x01,0x06, // GAP_ADTYPE_FLAGS,DISCOVERABLE | no BREDR
-9,10:  0x06,0xFF,      // length, manufacturer specific
-11,12:  0x0D ,0x00,     // Texas Instruments Company ID
-13:  0x03,           // TI_ST_DEVICE_ID
-14:  0x00,           // TI_ST_KEY_DATA_ID
-15:  0x00,           // Key state
-16:  0xEE};          // FCS (calculated by AP_SendMessageResponse)
-*/	
 }
 
 //*************BuildSetAdvertisementDataMsg**************
@@ -512,24 +442,6 @@ void BuildSetAdvertisementDataMsg(char name[], uint8_t *msg){
 	msg[j] = 0x0A; 	j++;  //AP_ADTYPE_POWER_LEVEL
 	msg[j] = 0x00; 	j++;  //0dBm
 	SetFCS(msg);  
-/*
-uint8_t NPI_SetAdvertisementData[] = {   
-  SOF,31,0x00,    // length = 32
-  0x55,0x43,      // SNP Set Advertisement Data
-  0x00,           // Scan Response Data
-6,7:  20,0x09,        // length, type=LOCAL_NAME_COMPLETE
-  'S','h','a','p','e',' ','t','h','e',' ','W','o','r','l','d',' ','0','0','1',
-// connection interval range
-  0x05,           // length of this data
-  0x12,           // GAP_ADTYPE_SLAVE_CONN_INTERVAL_RANGE
-  0x50,0x00,      // DEFAULT_DESIRED_MIN_CONN_INTERVAL
-  0x20,0x03,      // DEFAULT_DESIRED_MAX_CONN_INTERVAL
-// Tx power level
-  0x02,           // length of this data
-  0x0A,           // GAP_ADTYPE_POWER_LEVEL
-  0x00,           // 0dBm
-  0x77};          // FCS (calculated by AP_SendMessageResponse)
-*/
 }
 //*************BuildStartAdvertisementMsg**************
 // Create a Start Advertisement Data message, used in Lab 6
@@ -552,21 +464,6 @@ void BuildStartAdvertisementMsg(uint16_t interval, uint8_t *msg){
 	msg[12] = 0x00;	msg[13] = 0x01;	msg[14] = 0x00;	msg[15] = 0x00;	msg[16] = 0x00;	msg[17] = 0xC5;  //RFU
 	msg[18] = 0x02;  //Advertising will restart with connectable advertising when a connection is terminated
 	SetFCS(msg);
-/*
-const uint8_t NPI_StartAdvertisement[] = {   
-  SOF,14,0x00,    // length = 14
-  0x55,0x42,      // SNP Start Advertisement
-  0x00,           // Connectable Undirected Advertisements
-	
-  0x00,0x00,      // Advertise infinitely.
-  0x64,0x00,      // Advertising Interval (100 * 0.625 ms=62.5ms)
-  0x00,           // Filter Policy RFU
-  0x00,           // Initiator Address Type RFU
-	
-  0x00,0x01,0x00,0x00,0x00,0xC5, // RFU
-  0x02,           // Advertising will restart with connectable advertising when a connection is terminated
-  0xBB};          // FCS (calculated by AP_SendMessageResponse)	
-*/
 }
 
 //*************Lab6_StartAdvertisement**************

@@ -3,7 +3,7 @@ A 6 weeks embedded and real time systems MOOC based on an ARM Cortex-M4F microco
 
 Date: September - October 2017
 
-Course achieved with a score of 100% (**[Certificate](https://courses.edx.org/certificates/df9e89dc603442f2869169aa75d07562)** and **[Progression diagram](progression_diagram.PNG)** available)
+Course achieved with a score of 100% (**[Certificate](Certificat_UTAustinX_UT.RTBN.12.pdf)** and **[Progression diagram](progression_diagram.PNG)** available)
 
 You can find a **[syllabus](syllabus.md)** of this course.
 
